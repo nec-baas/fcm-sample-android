@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# FCMサーバーキー
+KEY=
+
+# Registration Token
+REGID=
+
+# 送信メッセージ
+MESSAGE=Test
+
+curl -v -X POST \
+ -H "Content-Type: application/json" \
+ -H "Authorization: key=$KEY" \
+ -d '{"registration_ids":["'"$REGID"'"],"data":{"message":"'"$MESSAGE"'"}}' \
+ https://fcm.googleapis.com/fcm/send
